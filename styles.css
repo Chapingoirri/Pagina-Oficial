@@ -381,3 +381,51 @@ footer {
     padding: 0;
     text-align: left;
 }
+
+/* —— Centrar imágenes y texto en sección investigación —— */
+.investigacion-content .section-flex {
+    /* Verticalmente alinea la imagen con el texto */
+    align-items: center;
+}
+
+.investigacion-content .section-image,
+.investigacion-content .section-text {
+    /* Conviértelos en flex-containers centrados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Si quieres que el texto de sección también quede centrado: */
+    text-align: center;
+}
+
+/* —— Nav colapsable en móvil —— */
+@media (max-width: 600px) {
+  .sidebar {
+    position: relative;
+  }
+  /* Oculta la lista por defecto */
+  .sidebar .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  /* Cuando .sidebar tenga la clase show-nav, muestra la lista */
+  .sidebar.show-nav .nav-links {
+    max-height: 300px; /* ajusta esta altura según tu número de enlaces */
+  }
+  /* El botón que despliega/oculta */
+  .sidebar .nav-toggle {
+    display: block;
+    background: var(--primary);
+    color: var(--accent);
+    border: none;
+    border-radius: var(--border-radius);
+    width: 100%;
+    padding: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+}
