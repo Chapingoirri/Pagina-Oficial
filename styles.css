@@ -1,91 +1,18 @@
-/* Responsive Enhancements */
-/* Ensure consistent box-sizing */
+/* Responsiveness resets */
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* Fluid images and logos */
-img,
-section img,
-.logo {
-  max-width: 100%;
-  height: auto;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Tablet-specific adjustments (between 901px and 1200px) */
-@media (max-width: 1200px) and (min-width: 901px) {
-  .header-inner,
-  main {
-    padding: 1rem;
-  }
-
-  .header-buttons,
-  .header-buttons.investigacion-buttons {
-    margin-top: 0.3rem;
-    gap: 0.5rem;
-  }
+html {
+    /* Base font size for rem units */
+    font-size: 16px;
 }
 
-/* Mobile-specific adjustments (<=600px) */
-@media (max-width: 600px) {
-  body {
-    font-size: 0.95rem;
-  }
-
-  header .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .header-buttons,
-  .header-buttons.investigacion-buttons {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 0.5rem;
-  }
-
-  main {
-    flex-direction: column;
-    padding: 1rem;
-    margin: 1rem;
-  }
-
-  section {
-    flex: 1 1 100%;
-    min-width: auto;
-    margin: 0.5rem 0;
-    padding: 1rem 0.8rem;
-  }
-
-  .investigacion-container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    position: relative;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem 0.5rem;
-  }
-
-  .investigacion-content {
-    padding: 1rem;
-  }
-
-  .section-flex {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .section-image img {
-    width: 100%;
-    max-width: 200px;
-  }
-}
-
-/* ================= ORIGINAL STYLES BELOW ================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500&display=swap');
 
 :root {
@@ -126,6 +53,7 @@ header {
 .header-inner.investigacion-header {
     padding-bottom: 0.5rem;
 }
+
 .logo {
     width: 60px;
     height: 60px;
@@ -133,6 +61,7 @@ header {
     box-shadow: 0 2px 8px rgba(67,206,162,0.25);
     background: #fff;
     object-fit: contain;
+    flex-shrink: 0;
 }
 .logo-left {
     margin-right: 1.2rem;
@@ -292,8 +221,8 @@ footer {
 }
 
 @keyframes slideInLeft {
-    0% { opacity: 0; transform: translateX(-40px);}  
-    100% { opacity: 1; transform: translateX(0);}  
+    0% { opacity: 0; transform: translateX(-40px);}    
+    100% { opacity: 1; transform: translateX(0);}   
 }
 
 .sidebar h3 {
@@ -382,34 +311,50 @@ footer {
     text-align: left;
 }
 
-/* —— Nav colapsable en móvil —— */
-@media (max-width: 600px) {
-  .sidebar {
-    position: relative;
-  }
-  /* Oculta la lista por defecto */
-  .sidebar .nav-links {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-  /* Cuando .sidebar tenga la clase show-nav, muestra la lista */
-  .sidebar.show-nav .nav-links {
-    max-height: 300px; /* ajusta esta altura según tu número de enlaces */
-  }
-  /* El botón que despliega/oculta */
-  .sidebar .nav-toggle {
-    display: block;
-    background: var(--primary);
-    color: var(--accent);
-    border: none;
-    border-radius: var(--border-radius);
-    width: 100%;
-    padding: 0.8rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-  }
+/* Tablet & small desktop breakpoint */
+@media (max-width: 1200px) {
+    .header-inner,
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    main {
+        padding: 1.5rem;
+    }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    h1, .investigacion-title {
+        font-size: 2rem;
+    }
+    .button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    section,
+    .investigacion-content {
+        padding: 1rem;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    .header-inner {
+        padding: 1rem;
+    }
+    .header-buttons {
+        margin-top: 0.2rem;
+    }
+    main {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    p, ul, ol {
+        font-size: 0.95rem;
+    }
 }
