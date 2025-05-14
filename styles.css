@@ -17,9 +17,6 @@ body {
     background: var(--bg-gradient);
     color: #222;
     min-height: 100vh;
-    background-size: cover; /* Asegúrate de que el fondo cubra toda la pantalla */
-    background-attachment: fixed; /* El fondo se mantiene fijo */
-    background: url('images/background.jpg')
 }
 
 header {
@@ -38,25 +35,25 @@ header {
     padding: 1.5rem 2rem 0.5rem 2rem;
     position: relative;
 }
-
+.header-inner.investigacion-header {
+    padding-bottom: 0.5rem;
+}
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(67,206,162,0.25);
     background: #fff;
     object-fit: contain;
 }
-
 .logo-left {
     margin-right: 1.2rem;
 }
-
 .logo-right {
     margin-left: 1.2rem;
 }
 
-h1 {
+h1, .investigacion-title {
     flex: 1;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -73,6 +70,10 @@ h1 {
     justify-content: center;
     gap: 1rem;
     margin-top: 0.5rem;
+}
+.header-buttons.investigacion-buttons {
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
 }
 
 .button {
@@ -135,26 +136,13 @@ section:hover {
 
 section img,
 section .img {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: var(--border-radius);
-    margin: 1rem 0;
+    margin: 1.2rem auto 0.8rem auto;
     box-shadow: 0 2px 8px rgba(24,90,157,0.13);
     background: #e7f8f3;
-    display: flex; /* Usa flexbox para centrar */
-    justify-content: center; /* Centra horizontalmente */
-}
-
-.section-text {
-    max-width: 800px; /* Limita el ancho del texto */
-    text-align: justify; /* Justifica el texto */
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    line-height: 1.6; /* Mejora la legibilidad */
-    padding: 1rem; /* Añade espacio alrededor del texto */
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
-    border-radius: var(--border-radius); /* Bordes redondeados */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 h2 {
@@ -195,14 +183,9 @@ footer {
 
 /* ----------- INVESTIGACIÓN PAGE ------------- */
 .investigacion-container {
-    display: flex; /* Usa flexbox para centrar */
-    flex-direction: column; /* Alinea los elementos en columna */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    min-height: 100vh; /* Asegúrate de que el contenido llene toda la pantalla */
-    padding: 1rem; /* Añade espacio alrededor del contenido */
-    box-sizing: border-box; /* Incluye el padding en el tamaño total */
-    background: var(--card-gradient); /* Aplica el fondo */
+    display: flex;
+    min-height: 70vh;
+    gap: 2rem;
 }
 
 .sidebar {
@@ -269,6 +252,35 @@ footer {
     min-width: 0;
 }
 
+/* Secciones investigación: imagen+texto horizontal */
+.section-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.section-image {
+    flex: 0 0 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.section-image img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(24, 90, 157, 0.2);
+    background: #e7f8f3;
+}
+.section-text {
+    flex: 1;
+    text-align: left;
+     text-align: justify; /* Justifica el texto */
+    text-justify: inter-word; /* Opcional: ajusta el espaciado entre palabras */
+}
+
 .investigacion-content h2 {
     color: var(--secondary);
     margin-top: 0.5rem;
@@ -304,7 +316,7 @@ footer {
     .investigacion-content {
         padding: 1.2rem 0.5rem;
     }
-.header-inner, .header-inner.investigacion-header {
+    .header-inner, .header-inner.investigacion-header {
         flex-direction: column;
         gap: 0.4rem;
     }
@@ -315,112 +327,27 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
     }
-}/* General text justification */
-.section-text {
-    text-align: justify; /* Justifica el texto */
-    text-justify: inter-word; /* Opcional: ajusta el espaciado entre palabras */
-}
-
-/* Justificar las listas */
-.section-text ul,
-.section-text ol {
-    text-align: justify; /* Justifica las listas */
-    text-justify: inter-word; /* Opcional: ajusta el espaciado entre palabras */
-    padding-left: 1.5rem; /* Mantener sangría para claridad */
-}/* Aumentar tamaño de las imágenes y centrarlas */
-.section-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-@media (max-width: 600px) {
-    body {
-        font-size: 14px; /* Reduce el tamaño del texto */
-    }
-
-    .header-inner {
-        flex-direction: column; /* Cambia a diseño vertical */
-        align-items: center; /* Centra los elementos */
-    }
-
-    .logo {
-        width: 40px; /* Reduce el tamaño del logo */
-        height: 40px;
-    }
-
-    .header-buttons {
-        flex-direction: column; /* Botones en una columna */
-        gap: 0.5rem;
-    }
-
-    .investigacion-container {
-        flex-direction: column; /* Cambia a diseño de una sola columna */
+    .section-flex {
+        flex-direction: column;
         gap: 1rem;
     }
-
-    .section-flex {
-        flex-direction: column; /* Cambia a disposición vertical */
-        text-align: center; /* Centra el contenido */
+    .section-image {
+            display: flex;
+    align-items: center;
+        justify-content:  center;
+    margin-bottom: 1.5rem;
     }
 
     .section-image img {
-        width: 90%; /* Ajusta el tamaño de la imagen al ancho del contenedor */
-        height: auto; /* Mantén la proporción */
-        max-width: 100%; /* La imagen no debe desbordarse del contenedor */
-    height: auto; /* Mantiene la proporción */
-    border-radius: var(--border-radius); /* Bordes redondeados */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-    }
-
- .section-text {
-        max-width: 90%; /* Asegúrate de que el texto ocupe el 90% del ancho de la pantalla */
-        padding: 1rem; /* Reduce el padding */
-    }
+    width: 200px; /* Aumentado el tamaño */
+    height: auto; /* Mantener proporción */
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(24, 90, 157, 0.2); /* Sombra más destacada */
+}
     
-    .sidebar {
-        display: none; /* Oculta la barra lateral en móviles */
+    .section-text {
+        text-align: left;
+         text-align: justify; /* Justifica el texto */
+    text-justify: inter-word; /* Opcional: ajusta el espaciado entre palabras */
     }
-}
-
-/* Pantallas medianas (tablets) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        font-size: 15px; /* Ajusta el tamaño del texto */
-    }
-
-    .header-inner {
-        flex-direction: row; /* Mantén el diseño horizontal */
-    }
-
-    .logo {
-        width: 50px; /* Ajusta el tamaño del logo */
-        height: 50px;
-    }
-
-    .investigacion-container {
-        flex-direction: row; /* Mantén el diseño de dos columnas */
-        gap: 1.5rem;
-    }
-
-    .section-image img {
-        width: 100%; /* Ocupa todo el espacio disponible */
-        height: auto;
-    }
-
-    .sidebar {
-        width: 30%; /* Ajusta el tamaño de la barra lateral */
-    }
-}
-
-img {
-    max-width: 100%; /* Evita que las imágenes desborden el contenedor */
-    height: auto; /* Mantiene la proporción */
-}
-
-.container {
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-    padding: 0 1rem; /* Añade espacio a los lados */
-    box-sizing: border-box; /* Incluye el relleno en el tamaño total */
 }
