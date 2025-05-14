@@ -383,3 +383,14 @@ footer {
         width: 30%; /* Ajusta el tamaño de la barra lateral */
     }
 }
+
+img {
+    max-width: 100%; /* Evita que las imágenes desborden el contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+
+.container {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 0 1rem; /* Añade espacio a los lados */
+    box-sizing: border-box; /* Incluye el relleno en el tamaño total */
+}
