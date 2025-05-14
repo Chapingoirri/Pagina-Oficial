@@ -382,22 +382,6 @@ footer {
     text-align: left;
 }
 
-/* —— Centrar imágenes y texto en sección investigación —— */
-.investigacion-content .section-flex {
-    /* Verticalmente alinea la imagen con el texto */
-    align-items: center;
-}
-
-.investigacion-content .section-image,
-.investigacion-content .section-text {
-    /* Conviértelos en flex-containers centrados */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Si quieres que el texto de sección también quede centrado: */
-    text-align: center;
-}
-
 /* —— Nav colapsable en móvil —— */
 @media (max-width: 600px) {
   .sidebar {
