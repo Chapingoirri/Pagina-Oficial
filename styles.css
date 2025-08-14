@@ -267,7 +267,7 @@ footer {
     margin-bottom: 1.5rem;
 }
 .section-image img {
-    width: 250px;
+    width: 150px;
     height: auto;
     object-fit: cover;
     border-radius: var(--border-radius);
